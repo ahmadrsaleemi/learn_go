@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func main() {
+	const (
+		SALARY_PER_HOUR = 1000
+		NUMBER_OF_DAYS  = 30
+		HOURS_PER_DAY   = 8
+	)
+
+	var number_of_hours_in_a_month int = NUMBER_OF_DAYS * HOURS_PER_DAY
+
+	fmt.Println("Salary per hour:", SALARY_PER_HOUR)
+	fmt.Println("Number of hours in a month:", number_of_hours_in_a_month)
+
+}
