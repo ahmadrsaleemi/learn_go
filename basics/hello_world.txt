@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World!")
+
+	var name string = "Rayyan"
+	var fatherName string = "Ahmad"
+
+	var fullName string = name + " " + fatherName
+	fmt.Println(fullName)
+
+	
+
+}
