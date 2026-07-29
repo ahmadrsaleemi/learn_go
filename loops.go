@@ -2,17 +2,22 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"time"
 )
 
 func main() {
 
-	nestedLoop()
+	fmt.Println("Welcome to the Go Loops Program")
 	var current_time int = time.Now().Second()
 
 	if( current_time % 2 == 0) {
 		printNumbers()
-	} else {
+	}else if (current_time % 3 == 0) {
+		nestedLoop()
+	}else if (current_time % 5 == 0) {
+		guessTheNumberGame()
+	}else {
 		printReportCard()
 	}
 
@@ -61,5 +66,30 @@ func nestedLoop() {
 			fmt.Print("*")
 		}
 		fmt.Println()
+	}
+}
+
+func guessTheNumberGame () {
+fmt.Println("Lets play the guessing number game")
+
+	randomNumber := rand.NewSource(time.Now().UnixNano())
+	random := rand.New(randomNumber)
+
+	targetNumber := random.Intn(100) + 1
+
+	var guess int
+
+	for {
+		fmt.Print("Enter your guess (1-100): ")
+		fmt.Scanln(&guess)
+
+		if guess < targetNumber {
+			fmt.Println("Too low! Try again.")
+		} else if guess > targetNumber {
+			fmt.Println("Too high! Try again.")
+		} else {
+			fmt.Println("Congratulations! You guessed the correct number:", targetNumber)
+			break
+		}
 	}
 }
