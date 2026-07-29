@@ -17,10 +17,25 @@ func main() {
 		nestedLoop()
 	}else if (current_time % 5 == 0) {
 		guessTheNumberGame()
+	}else if (current_time % 7 == 0) {
+		fruitCheck("Mango")
 	}else {
 		printReportCard()
 	}
 
+}
+
+func fruitCheck(fruitName string) {
+	switch fruitName {
+		case "Apple":
+			fmt.Println("You have selected Apple")
+		case "Banana":
+			fmt.Println("You have selected Banana")
+		case "Mango":
+			fmt.Println("You have selected Mango")
+		default:
+			fmt.Println("You have selected an unknown fruit")
+	}
 }
 
 func printNumbers() {
