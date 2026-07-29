@@ -12,6 +12,7 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Imports** — multi-import blocks, `net/http`, basic error checks ([`basics/import.txt`](basics/import.txt))
 - **Types & functions** — `string`/`int`, `:=`, custom functions ([`basics/data_types.txt`](basics/data_types.txt))
 - **Structs** — defining types, fields, creating values, passing structs to functions ([`data_types.go`](data_types.go))
+- **Loops** — classic `for`, `range` over slices, `continue`, nested loops ([`loops.go`](loops.go))
 
 ## Course plan
 
