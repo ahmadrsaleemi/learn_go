@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"maps"
 	"math/rand"
 	"time"
 )
@@ -19,10 +20,85 @@ func main() {
 		guessTheNumberGame()
 	}else if (current_time % 7 == 0) {
 		fruitCheck("Mango")
+	}else if (current_time % 11 == 0) {
+		returnBalonDorWinner()
+	}else if(current_time % 13 == 0){
+		mapIntroduction()
 	}else {
 		printReportCard()
 	}
 
+}
+
+func mapIntroduction() {
+	myMap := make(map[string]int)
+	myMap["streetname"] = 123
+	myMap["zipcode"] = 45678
+	myMap["housenumber"] = 42
+	fmt.Println("Map: ", myMap)
+
+	delete(myMap, "zipcode")
+	fmt.Println("Map: ", myMap)
+
+	// clear(myMap)
+	// fmt.Println("Map: ", myMap)
+
+	_, unknown := myMap["streetname"]
+	fmt.Println("Is a value associated with: " , unknown)
+
+	orderCancelled := map[int]string {1001: "John Doe", 1002: "Christopher"}
+
+	paymentFailed := map[int]string {1001: "John Doe", 1002: "Christopher"}
+
+	if maps.Equal(orderCancelled, paymentFailed) {
+		fmt.Println("All orders whose paymentFailed are cancelled!")
+	}
+
+	fmt.Println("List of cancelled orders!")
+
+	for orderId, customerName := range orderCancelled {
+		fmt.Println("Order Id: " , orderId , " and customer name: " , customerName)
+	}
+}
+
+func sliceIntroduction() {
+	// var numbers [] int
+	// var numbers1 = [] int {1, 2, 3, 4, 5}
+
+	// numbers2 := [] int {6, 7, 8, 9, 10}
+
+	// slice := make([] int, 5)
+
+	arr := [5] int {11, 12, 13, 14, 15}
+
+	slice1 := arr[1:4]
+
+	fmt.Println("Slice 1: ", slice1)
+
+	sliceCopy := make([] int, len(slice1))
+	copy(sliceCopy, slice1)
+	fmt.Println("Slice Copy: ", sliceCopy)
+
+	for index, value := range slice1 {
+		fmt.Println("Index: ", index, " Value: ", value)
+	}
+
+	twoD := make([][] int, 5)
+	for i:=0; i<5; i++ {
+		innerLen := i + 1
+		twoD[i] = make([] int, innerLen)
+		for j:=0; j<innerLen; j++ {
+			twoD[i][j] = i + j
+		}
+	}
+	
+
+	for _, innerSlice := range twoD {
+		fmt.Println(innerSlice)
+	}
+
+	sliced := slice1[1:3]
+	fmt.Println("Sliced: ", sliced)
 }
 
 func fruitCheck(fruitName string) {
@@ -106,5 +182,14 @@ fmt.Println("Lets play the guessing number game")
 			fmt.Println("Congratulations! You guessed the correct number:", targetNumber)
 			break
 		}
+	}
+}
+
+func returnBalonDorWinner() {
+	var list [][]string = [][]string{{"Lionel Messi", "2021"}, {"Cristiano Ronaldo", "2017"}, {"Luka Modric", "2018"}}
+
+	fmt.Println("List of Ballon d'Or Winners:")
+	for _, winner := range list {
+		fmt.Println("Player:", winner[0], ", Year:", winner[1])
 	}
 }
