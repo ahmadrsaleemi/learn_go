@@ -1,0 +1,81 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+	"time"
+)
+
+func main(){ 
+	fmt.Println("Experiencing other concepts in Go programming language")
+
+	var current_time int = time.Now().Second()
+
+	if( current_time % 2 == 0) {
+		incomestreams := sum(1400, 1000, 1200, 1500, 1100)
+		fmt.Println("Total income is: ", incomestreams)
+	} else if (current_time % 3 == 0) {
+		income := [][]string{
+			{"Salary", "1400"},
+			{"Freelance", "1000"},
+			{"Investments", "1200"},
+			{"Rental Income", "1500"},
+			{"Other Sources", "1100"},
+		}
+		incomeType, total := incomeStreams(income)
+		fmt.Println(incomeType, total)
+	} else if (current_time % 5 == 0) {
+		allEmployeeSalary := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+		totalExpense := sum(allEmployeeSalary...)
+		fmt.Println("Total expense is: ", totalExpense)
+	} else if (current_time % 7 == 0) {
+		defer deferredFunction("This is deferred function but called first")
+		deferredFunction("This is plain function and called at end of the main function")
+	}else if (current_time % 11 == 0) {
+		fmt.Println("Working on panic")
+
+		process(190)
+		process(-3)
+	}
+
+}
+
+func sum(incomestreams ... int) int {
+	total := 0
+	for _, income := range incomestreams {
+		total += income
+	}
+
+	return total
+}
+
+func incomeStreams(income [][]string) (string, int) {
+	total := 0
+	for _, row := range income {
+		incometype := row[0]
+		amount := row[1]
+		// Process each income type and amount
+		fmt.Println("Income Type: ", incometype, "Amount: ", amount)
+		amountValue, err := strconv.Atoi(amount)
+		if err != nil {
+			fmt.Println("Error converting amount to integer:", err)
+			continue
+		}
+		total += amountValue
+	}
+	return "Total Income", total
+}
+
+func deferredFunction(content string) {
+	fmt.Println(content)
+}
+
+func process(input int) {
+	defer fmt.Println("Deferred 1")
+	defer fmt.Println("Deferred 2")
+	if input < 0 {
+		fmt.Println("Before Panic!")
+		panic("Negative input is not allowed")
+	}
+	fmt.Println("Processing input:", input)
+}
