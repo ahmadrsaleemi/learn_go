@@ -40,6 +40,18 @@ func main(){
 
 }
 
+func processInput() {
+	defer func() {
+		if r:= recover(); r != nil {
+			fmt.Println("Recovered from panic:", r)
+		}
+	}()
+
+	fmt.Println("Start process. ...")
+	panic("Something went wrong!")
+	fmt.Println("End process.")
+}
+
 func sum(incomestreams ... int) int {
 	total := 0
 	for _, income := range incomestreams {

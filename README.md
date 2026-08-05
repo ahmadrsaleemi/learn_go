@@ -12,10 +12,11 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Imports** — multi-import blocks, `net/http`, basic error checks ([`basics/import.txt`](basics/import.txt))
 - **Types & functions** — `string`/`int`, `:=`, custom functions ([`basics/data_types.txt`](basics/data_types.txt))
 - **Structs** — defining types, fields, creating values, passing structs to functions ([`basics/data_types.txt`](basics/data_types.txt))
-- **Control flow** — `if`/`else if`, `switch`, classic `for`, infinite `for` + `break`, nested loops, `continue` ([`basics/loops.go`](basics/loops.go))
-- **Slices** — arrays vs slices, slicing, `copy`, `range`, 2D slices ([`basics/loops.go`](basics/loops.go))
-- **Maps** — `make`, insert/delete, comma-ok check, `maps.Equal`, ranging over maps ([`basics/loops.go`](basics/loops.go))
-- **Other concepts** — variadic functions (`...`), multiple return values, `strconv.Atoi`, `defer`, `panic` ([`otherconcepts.go`](otherconcepts.go))
+- **Control flow** — `if`/`else if`, `switch`, classic `for`, infinite `for` + `break`, nested loops, `continue` ([`basics/loops.txt`](basics/loops.txt))
+- **Slices** — arrays vs slices, slicing, `copy`, `range`, 2D slices ([`basics/loops.txt`](basics/loops.txt))
+- **Maps** — `make`, insert/delete, comma-ok check, `maps.Equal`, ranging over maps ([`basics/loops.txt`](basics/loops.txt))
+- **Other concepts** — variadic functions (`...`), multiple return values, `strconv.Atoi`, `defer`, `panic` ([`basics/otherconcepts.txt`](basics/otherconcepts.txt))
+- **Closures** — functions that return functions and keep state across calls ([`intermediate/closure.go`](intermediate/closure.go))
 
 ## Course plan
 
