@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Pointers Example in Go!")
+
+	var ptr * int
+	var counter int = 10
+	ptr = &counter
+	fmt.Println("Counter value: ", counter)
+	fmt.Println("Pointer memory address: ", ptr)
+	fmt.Println("Value pointed to by ptr: ", *ptr)
+}

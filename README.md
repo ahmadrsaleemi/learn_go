@@ -16,7 +16,10 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Slices** — arrays vs slices, slicing, `copy`, `range`, 2D slices ([`basics/loops.txt`](basics/loops.txt))
 - **Maps** — `make`, insert/delete, comma-ok check, `maps.Equal`, ranging over maps ([`basics/loops.txt`](basics/loops.txt))
 - **Other concepts** — variadic functions (`...`), multiple return values, `strconv.Atoi`, `defer`, `panic` ([`basics/otherconcepts.txt`](basics/otherconcepts.txt))
-- **Closures** — functions that return functions and keep state across calls ([`intermediate/closure.go`](intermediate/closure.go))
+- **Constants & arithmetic** — `const` groups and basic arithmetic ([`basics/const_and_arithemetic_ops.txt`](basics/const_and_arithemetic_ops.txt))
+- **Closures** — functions that return functions and keep state across calls ([`intermediate/closure.txt`](intermediate/closure.txt))
+- **Recursion** — factorial, fibonacci, sum of digits ([`intermediate/recursion.txt`](intermediate/recursion.txt))
+- **Pointers** — declaring pointers, `&` address-of, `*` dereference ([`intermediate/pointers.txt`](intermediate/pointers.txt))
 
 ## Course plan
 

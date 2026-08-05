@@ -1,0 +1,40 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Recursion Example in Go!")
+
+	fmt.Println("Factorial of 5 is:", factorial(5))
+
+	fmt.Println("Fibonacci of 7 is:", fibonacci(7))
+
+	fmt.Println("Sum of digits of 786 is:", sumOfIndividualDigits(786))
+
+	fmt.Println("Summary!")
+
+	fmt.Println("Today, I learnt how to use recursion in Go. I have worked with recursion in the past, I feel this I am very confident with this concept.")
+}
+
+func factorial(number int) int {
+	if number == 0 {
+		return 1
+	}
+	return number * factorial(number - 1)
+}
+
+func fibonacci(number int) int {
+	if number <= 1 {
+		return number
+	}
+
+	return fibonacci(number-1) + fibonacci(number-2)
+}
+
+func sumOfIndividualDigits(number int) int {
+	if number < 10 {
+		return number
+	}
+
+	return number%10 + sumOfIndividualDigits(number/10)
+}
