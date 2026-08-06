@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+func main () {
+	fmt.Println("String Manipulation Example in Go!")
+
+	message := "Hello,\nGo Compiler!"
+	tabMessage := "Hello,\tGo Compiler!"
+	carriageReturnMessage := "Hello,\rGo Compiler!"
+	rawMessage := `Hello,\nGo Compiler!`
+
+	fmt.Println("Message:", message)
+	fmt.Println("Tab Message:", tabMessage)
+	fmt.Println("Carriage Return Message:", carriageReturnMessage)
+	fmt.Println("Raw Message:", rawMessage)
+
+	lengthOfMessage := len(message)
+	fmt.Println("Length of Message:", lengthOfMessage)
+
+	fmt.Println("Print first character ASCII: " , message[0])
+	fmt.Println("Print first character: " , string(message[0]))
+
+	name := "John Doe"
+	timeOfDay := "morning"
+	greeting := "Good " + timeOfDay + ", " + name + "!"
+	fmt.Println("Greeting Message:", greeting)
+
+	for i, char := range message {
+		fmt.Print("Character at index ", i, ": ", string(char), "\n")
+	}
+
+	fmt.Println("Length of name: ", utf8.RuneCountInString(name))
+
+	ch := 'A'
+	fmt.Println("Character:", string(ch))
+	fmt.Println("ASCII value of character:", ch)
+
+	//print complete alhphabets
+	startingPoint := 65
+	for i := 0; i < 26; i++ {
+		fmt.Println("Character:", string(startingPoint + i), "ASCII value:", startingPoint + i)
+	}
+
+}
