@@ -1,0 +1,23 @@
+package main
+
+import (
+	"html/template"
+	"os"
+)
+
+func main () {
+	tmp1, err := template.New("example").Parse("Welcome, {{.name}}! How are you doing?")
+
+	if err != nil {
+		panic(err)
+	}
+
+	data := map[string]interface{} {
+		"name" : "John",
+	}
+
+	err = tmp1.Execute(os.Stdout, data)
+	if err != nil {
+		panic(err)
+	}
+}

@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println(time.Now())
+
+	parsedTime, _ := time.Parse("1994-10-29", "2026-06-06")
+	fmt.Println(parsedTime)
+
+	now := time.Now()
+	unixTime := now.Unix()
+
+	fmt.Println(unixTime)
+
+	t1 := time.Unix(unixTime, 0)
+
+	fmt.Println(t1)
+
+	formattedTime := t1.Format("2006-01-02")
+
+	fmt.Println("Time: " , formattedTime)
+}

@@ -1,0 +1,18 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	fmt.Println("Experimenting with numbers parsing in GO!")
+
+	numStr := "8227"
+	num, err := strconv.Atoi(numStr)
+	if err != nil {
+		fmt.Println("Error parsing the value: ", err)
+	}
+
+	fmt.Println("Parsed Integer: " , num)
+}

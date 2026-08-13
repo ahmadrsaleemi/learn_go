@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+
+	fmt.Println("Experiencing random numbers in Go!")
+
+	fmt.Println(rand.Intn(101))
+
+	// val := rand.New(rand.NewSource(40))
+
+	val := rand.New(rand.NewSource(time.Now().Unix()))
+
+	fmt.Println(val.Intn(100))
+
+}

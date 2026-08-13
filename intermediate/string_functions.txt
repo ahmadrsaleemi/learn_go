@@ -1,0 +1,61 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
+
+func main() {
+	str := "Hello Go!"
+
+	fmt.Println(len(str))
+
+	str1 := "Hello"
+	str2 := "World"
+	result := str1 + " " + str2
+	fmt.Println(result)
+	fmt.Println(str1[0])
+	fmt.Println(string(str1[0]))
+	fmt.Println(string(str1[1:4]))
+
+	//string conversion
+	num := 18
+	str3 := strconv.Itoa(num)
+	fmt.Println((str3))
+
+	//string splitting
+	fruits := "apple,orange,banana,kiwi,pear"
+	parts := strings.Split(fruits, ",")
+	for _, value := range parts {
+		fmt.Println(value)
+	}
+	
+
+	//join array to string
+	countries := []string{"Germany","Denmark","France","Italy"}
+	joined := strings.Join(countries, " : ")
+	fmt.Println(joined)
+
+
+	//find specific conuntry
+	fmt.Println(strings.Contains(joined, "Denmark"))
+
+	fmt.Println(strings.Repeat("Tha " , 3))
+
+	var builder strings.Builder
+	builder.WriteString("Ahmad")
+	builder.WriteString(", Learning and ")
+	builder.WriteString("experiencing Go!")
+
+	finalString := builder.String()
+	fmt.Println(finalString)
+
+	builder.WriteRune(' ')
+	builder.WriteRune('#')
+	builder.WriteRune(' ')
+	builder.WriteRune('1')
+
+	fmt.Println(builder.String())
+
+}
