@@ -20,6 +20,17 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Closures** — functions that return functions and keep state across calls ([`intermediate/closure.txt`](intermediate/closure.txt))
 - **Recursion** — factorial, fibonacci, sum of digits ([`intermediate/recursion.txt`](intermediate/recursion.txt))
 - **Pointers** — declaring pointers, `&` address-of, `*` dereference ([`intermediate/pointers.txt`](intermediate/pointers.txt))
+- **Embedded structs** — struct embedding and method overriding ([`intermediate/embedded_structs.txt`](intermediate/embedded_structs.txt))
+- **Interfaces** — defining interfaces and implementing them on multiple types ([`intermediate/interfaces.txt`](intermediate/interfaces.txt))
+- **Generics** — type parameters, generic functions, and a generic stack ([`intermediate/generics.txt`](intermediate/generics.txt))
+- **String formatting** — `Printf` width/padding and raw vs interpreted strings ([`intermediate/string_formatting.txt`](intermediate/string_formatting.txt))
+- **String manipulation** — escape sequences, indexing, ranging runes, `utf8` ([`intermediate/string_manipulation.txt`](intermediate/string_manipulation.txt))
+- **String functions** — `strings`/`strconv` helpers like Split, Join, Itoa ([`intermediate/string_functions.txt`](intermediate/string_functions.txt))
+- **Number parsing** — parsing strings to ints with `strconv.Atoi` ([`intermediate/number_parsing.txt`](intermediate/number_parsing.txt))
+- **Time** — `time.Now`, Unix timestamps, parsing and formatting ([`intermediate/time.txt`](intermediate/time.txt))
+- **Random numbers** — `math/rand` with seeded sources ([`intermediate/rand_nums.txt`](intermediate/rand_nums.txt))
+- **Text templates** — `html/template` parse and execute ([`intermediate/text_templates.txt`](intermediate/text_templates.txt))
+- **URL parsing** — `net/url` parse, query params, and building URLs ([`intermediate/url_parsing.go`](intermediate/url_parsing.go))
 
 ## Course plan
 
