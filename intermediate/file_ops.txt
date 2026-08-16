@@ -1,0 +1,81 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+func main() {
+	fmt.Println("File operations experimenting with Go Lang!")
+
+	file, err := os.Create("output.txt")
+	if err != nil {
+		fmt.Println("Error creating file!")
+		return
+	}
+
+	defer file.Close()
+
+	//writing some data to the file
+
+	data := []byte("Hello Ahmad here!\n")
+	file.Write(data)
+
+	_, err = file.WriteString("Hello Go! \n\n\n")
+
+	if err != nil {
+		fmt.Println("writing string caused an error!")
+	}
+
+	//reading files
+	dataRead, err := os.Open("output.txt")
+	if err != nil {
+		fmt.Println("Error opening the file")
+		return
+	}
+
+	defer dataRead.Close()
+
+	fmt.Println("File opened successfully")
+
+	data = make([]byte, 1024)
+
+	_,err = dataRead.Read(data)
+
+	if err != nil {
+		fmt.Println("Error reading the file")
+		return
+	}
+
+	fmt.Println("Data in file: ", string(data))
+
+	scanner := bufio.NewScanner(dataRead)
+
+	line_num := 1
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println("Line # " , line_num, " " , line)
+	}
+
+	err = scanner.Err()
+	if err != nil {
+		fmt.Println("Error reading the file ", err)
+		return
+	}
+
+	//create path from downloads folder
+
+	filePath := filepath.Join("downloads", "kyc.zip")
+
+	fmt.Println("Joined Path: ", filePath)
+
+	dir, fileName := filepath.Split(filePath)
+
+	fmt.Println("Directory: ", dir)
+	fmt.Println("Name of file: ", fileName)
+	fmt.Println("Extension of file: ", filepath.Ext(fileName))
+	fmt.Println("Just filename: " , strings.TrimSuffix(fileName, filepath.Ext(fileName)))
+}

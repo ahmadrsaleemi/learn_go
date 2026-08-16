@@ -30,7 +30,13 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Time** — `time.Now`, Unix timestamps, parsing and formatting ([`intermediate/time.txt`](intermediate/time.txt))
 - **Random numbers** — `math/rand` with seeded sources ([`intermediate/rand_nums.txt`](intermediate/rand_nums.txt))
 - **Text templates** — `html/template` parse and execute ([`intermediate/text_templates.txt`](intermediate/text_templates.txt))
-- **URL parsing** — `net/url` parse, query params, and building URLs ([`intermediate/url_parsing.go`](intermediate/url_parsing.go))
+- **URL parsing** — `net/url` parse, query params, and building URLs ([`intermediate/url_parsing.txt`](intermediate/url_parsing.txt))
+- **Base64 encoding** — encode and decode with `encoding/base64` ([`intermediate/encode.txt`](intermediate/encode.txt))
+- **Hashing** — SHA-256/512, salts, and password hashing ([`intermediate/hashing.txt`](intermediate/hashing.txt))
+- **JSON** — struct tags and `json.Marshal` ([`intermediate/json.txt`](intermediate/json.txt))
+- **File operations** — create, write, read, and path helpers ([`intermediate/file_ops.txt`](intermediate/file_ops.txt))
+- **CLI args** — `os.Args` and `flag` parsing ([`intermediate/cli_args.txt`](intermediate/cli_args.txt))
+- **Goroutines** — launching concurrent work with `go` ([`advance/go_routines.go`](advance/go_routines.go))
 
 ## Course plan
 
