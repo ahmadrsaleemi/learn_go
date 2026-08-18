@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("Experimenting Channels in Go!")
+
+	greeting := make(chan string)
+
+	stream := []string{
+		"God Morgon",
+		"Welcome to Boras",
+		"Weather is dark and cloudy",
+		"Expect light showers in afternoon",
+	}
+
+	go func() {
+		for _, value := range stream {
+			greeting <- value
+		}
+		close(greeting)
+	}()
+
+	for receiver := range greeting {
+		fmt.Println(receiver)
+	}
+
+	fmt.Println("End of Program")
+
+	time.Sleep(1 * time.Second)
+
+	//so what i learned
+	//i learned how channels are organized
+	//how i can create a channel using make and then pass data to the channel
+	//i also learned how to take out info from all available universities
+}

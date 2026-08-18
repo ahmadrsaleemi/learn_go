@@ -36,7 +36,9 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **JSON** — struct tags and `json.Marshal` ([`intermediate/json.txt`](intermediate/json.txt))
 - **File operations** — create, write, read, and path helpers ([`intermediate/file_ops.txt`](intermediate/file_ops.txt))
 - **CLI args** — `os.Args` and `flag` parsing ([`intermediate/cli_args.txt`](intermediate/cli_args.txt))
-- **Goroutines** — launching concurrent work with `go` ([`advance/go_routines.go`](advance/go_routines.go))
+- **Goroutines** — launching concurrent work with `go` ([`advance/go_routines.txt`](advance/go_routines.txt))
+- **Channels** — `make`, send/receive, `close`, and ranging over a channel ([`advance/channels.txt`](advance/channels.txt))
+- **Buffered channels** — capacity with `make(chan T, n)` and blocking when empty/full ([`advance/buffered_channels.go`](advance/buffered_channels.go))
 
 ## Course plan
 
