@@ -1,0 +1,41 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	ch := make(chan int)
+	// go func(ch chan<- int) {
+	// 	for i := range 5 {
+
+	// 		ch <- i
+	// 	}
+	// 	close(ch)
+	// }(ch)
+
+	producerData(ch)
+
+	// for value := range ch {
+	// 	fmt.Println("Received: ", value)
+	// }
+
+	receiveData(ch)
+}
+
+func producerData(ch chan <- int){
+	go func(){
+		for i:= range 5 {
+			ch <- i
+		}
+		close(ch)
+	}()
+}
+
+func receiveData(ch <- chan int){
+	time.Sleep(2 * time.Second)
+	for value := range ch{
+		fmt.Println("Received: ", value)
+	}
+}

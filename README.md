@@ -38,7 +38,9 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **CLI args** — `os.Args` and `flag` parsing ([`intermediate/cli_args.txt`](intermediate/cli_args.txt))
 - **Goroutines** — launching concurrent work with `go` ([`advance/go_routines.txt`](advance/go_routines.txt))
 - **Channels** — `make`, send/receive, `close`, and ranging over a channel ([`advance/channels.txt`](advance/channels.txt))
-- **Buffered channels** — capacity with `make(chan T, n)` and blocking when empty/full ([`advance/buffered_channels.go`](advance/buffered_channels.go))
+- **Buffered channels** — capacity with `make(chan T, n)` and blocking when empty/full ([`advance/buffered_channels.txt`](advance/buffered_channels.txt))
+- **Channel directions** — send-only/receive-only channels for safer APIs ([`advance/channel_directions.txt`](advance/channel_directions.txt))
+- **Channel synchronization** — coordinating goroutines with channels and completion signaling ([`advance/channel_synchronization.txt`](advance/channel_synchronization.txt))
 
 ## Course plan
 
