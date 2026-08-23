@@ -1,0 +1,58 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	timer := time.NewTimer(2 * time.Second)
+
+	go func(){
+		<-timer.C
+		fmt.Println("Delayed operation executed")
+	}()
+	fmt.Println("Waiting.....")
+	time.Sleep(3 * time.Second)
+	fmt.Println("End of the program")
+
+}
+
+// func longRunningOperation() {
+// 	for i := range 20 {
+// 		fmt.Println(i)
+// 		time.Sleep(1 * time.Second)
+// 	}
+// }
+
+// func main () {
+// 	//i learned how to create channels and go routines where go routines can run in background and we rely on timer to
+// 	//figure out the execution
+// 	timeout := time.After(3 * time.Second)
+// 	done := make(chan bool)
+
+// 	go func () {
+// 		longRunningOperation()
+// 		done <- true
+// 	}()
+
+// 	select {
+// 	case <- timeout:
+// 		fmt.Println("Operation timedout!")
+// 	case <- done:
+// 		fmt.Println("Operation completed")
+// 	}
+// }
+
+// func main() {
+// 	fmt.Println("Experimenting in Go with timers")
+// 	timer := time.NewTimer(2 * time.Second)
+// 	fmt.Println("Waiting for timer")
+// 	stopped := timer.Stop()
+// 	if stopped {
+// 		fmt.Println("Timer stopped")
+// 	}
+// 	timer.Reset(time.Second)
+// 	value := <-timer.C
+// 	fmt.Println("Timer expired: ", value)
+// }

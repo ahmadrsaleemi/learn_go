@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main() {
+	ch := make(chan int)
+
+	close(ch)
+
+	val, ok := <-ch
+	if !ok {
+		fmt.Println("Channel is closed")
+		return
+	}
+
+	fmt.Println("Value: ", val)
+
+}

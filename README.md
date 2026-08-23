@@ -41,6 +41,14 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Buffered channels** — capacity with `make(chan T, n)` and blocking when empty/full ([`advance/buffered_channels.txt`](advance/buffered_channels.txt))
 - **Channel directions** — send-only/receive-only channels for safer APIs ([`advance/channel_directions.txt`](advance/channel_directions.txt))
 - **Channel synchronization** — coordinating goroutines with channels and completion signaling ([`advance/channel_synchronization.txt`](advance/channel_synchronization.txt))
+- **Closing channels** — `close`, comma-ok idiom, and detecting closed channels ([`advance/closing_channels.txt`](advance/closing_channels.txt))
+- **Multiplexing with select** — `select` across multiple channels with a `default` case ([`advance/multiplexing_select.txt`](advance/multiplexing_select.txt))
+- **Non-blocking channel ops** — non-blocking send/receive using `select` + `default` ([`advance/non_blocking_channel_operation.txt`](advance/non_blocking_channel_operation.txt))
+- **Timers** — one-shot delays with `time.NewTimer` and `time.After` ([`advance/timers.txt`](advance/timers.txt))
+- **Tickers** — periodic tasks with `time.NewTicker` ([`advance/tickers.txt`](advance/tickers.txt))
+- **Context** — cancellation, timeouts, and values with `context` ([`advance/context.txt`](advance/context.txt))
+- **Wait groups** — coordinating goroutines with `sync.WaitGroup` ([`advance/wait_groups.txt`](advance/wait_groups.txt))
+- **Worker pools** — fixed worker goroutines processing jobs from a channel ([`advance/worker_pools.txt`](advance/worker_pools.txt))
 
 ## Course plan
 
