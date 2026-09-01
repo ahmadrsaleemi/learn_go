@@ -49,6 +49,10 @@ Learn Go well enough to work confidently in a production codebase — write idio
 - **Context** — cancellation, timeouts, and values with `context` ([`advance/context.txt`](advance/context.txt))
 - **Wait groups** — coordinating goroutines with `sync.WaitGroup` ([`advance/wait_groups.txt`](advance/wait_groups.txt))
 - **Worker pools** — fixed worker goroutines processing jobs from a channel ([`advance/worker_pools.txt`](advance/worker_pools.txt))
+- **Mutexes** — protecting shared state with `sync.Mutex`, `Lock`/`Unlock`, and `defer` ([`advance/mutexes.txt`](advance/mutexes.txt))
+- **Atomic counters** — lock-free increments with `sync/atomic` (`AddInt64`, `LoadInt64`) ([`advance/atomic_counters.txt`](advance/atomic_counters.txt))
+- **Rate limiting (fixed window)** — request limits per time window with mutex and reset logic ([`advance/rate_limiting_fixed_window_algo.go`](advance/rate_limiting_fixed_window_algo.go))
+- **Rate limiting (token bucket)** — token channel, periodic refill with ticker, allow/deny via `select` ([`advance/rate_limiting_token_bucket_algo.txt`](advance/rate_limiting_token_bucket_algo.txt))
 
 ## Course plan
 
