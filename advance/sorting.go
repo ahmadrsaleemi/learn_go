@@ -1,0 +1,160 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	fmt.Println("Experimenting different sorting algorithms in Go")
+
+	// --- stdlib ---
+	numbers := []int{5, 3, 4, 1, 2}
+	sort.Ints(numbers)
+	fmt.Println("sort.Ints:", numbers)
+
+	stringSlice := []string{"banana", "apple", "cherry", "avocado"}
+	sort.Strings(stringSlice)
+	fmt.Println("sort.Strings:", stringSlice)
+
+	// --- custom algorithms ---
+	demo := []int{64, 34, 25, 12, 22, 11, 90}
+
+	fmt.Println("bubble:", bubbleSort(append([]int(nil), demo...)))
+	fmt.Println("selection:", selectionSort(append([]int(nil), demo...)))
+	fmt.Println("insertion:", insertionSort(append([]int(nil), demo...)))
+	fmt.Println("merge:", mergeSort(append([]int(nil), demo...)))
+	fmt.Println("quick:", quickSort(append([]int(nil), demo...)))
+	fmt.Println("heap:", heapSort(append([]int(nil), demo...)))
+}
+
+func bubbleSort(arr []int) []int {
+	n := len(arr)
+	for i := 0; i < n-1; i++ {
+		swapped := false
+		for j := 0; j < n-i-1; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
+				swapped = true
+			}
+		}
+		if !swapped {
+			break
+		}
+	}
+	return arr
+}
+
+func selectionSort(arr []int) []int {
+	n := len(arr)
+	for i := 0; i < n-1; i++ {
+		minIdx := i
+		for j := i + 1; j < n; j++ {
+			if arr[j] < arr[minIdx] {
+				minIdx = j
+			}
+		}
+		arr[i], arr[minIdx] = arr[minIdx], arr[i]
+	}
+	return arr
+}
+
+func insertionSort(arr []int) []int {
+	for i := 1; i < len(arr); i++ {
+		key := arr[i]
+		j := i - 1
+		for j >= 0 && arr[j] > key {
+			arr[j+1] = arr[j]
+			j--
+		}
+		arr[j+1] = key
+	}
+	return arr
+}
+
+func mergeSort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+
+	mid := len(arr) / 2
+	left := mergeSort(arr[:mid])
+	right := mergeSort(arr[mid:])
+	return merge(left, right)
+}
+
+func merge(left, right []int) []int {
+	result := make([]int, 0, len(left)+len(right))
+	i, j := 0, 0
+
+	for i < len(left) && j < len(right) {
+		if left[i] <= right[j] {
+			result = append(result, left[i])
+			i++
+		} else {
+			result = append(result, right[j])
+			j++
+		}
+	}
+
+	result = append(result, left[i:]...)
+	result = append(result, right[j:]...)
+	return result
+}
+
+func quickSort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+
+	pivot := arr[len(arr)/2]
+	left := make([]int, 0, len(arr))
+	middle := make([]int, 0, len(arr))
+	right := make([]int, 0, len(arr))
+
+	for _, v := range arr {
+		switch {
+		case v < pivot:
+			left = append(left, v)
+		case v > pivot:
+			right = append(right, v)
+		default:
+			middle = append(middle, v)
+		}
+	}
+
+	left = quickSort(left)
+	right = quickSort(right)
+	return append(append(left, middle...), right...)
+}
+
+func heapSort(arr []int) []int {
+	n := len(arr)
+
+	for i := n/2 - 1; i >= 0; i-- {
+		heapify(arr, n, i)
+	}
+
+	for i := n - 1; i > 0; i-- {
+		arr[0], arr[i] = arr[i], arr[0]
+		heapify(arr, i, 0)
+	}
+	return arr
+}
+
+func heapify(arr []int, n, i int) {
+	largest := i
+	left := 2*i + 1
+	right := 2*i + 2
+
+	if left < n && arr[left] > arr[largest] {
+		largest = left
+	}
+	if right < n && arr[right] > arr[largest] {
+		largest = right
+	}
+	if largest != i {
+		arr[i], arr[largest] = arr[largest], arr[i]
+		heapify(arr, n, largest)
+	}
+}
