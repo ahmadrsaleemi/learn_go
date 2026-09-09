@@ -1,0 +1,77 @@
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	"os/exec"
+	"strings"
+	"time"
+)
+
+func main() {
+	fmt.Println("Experimenting how processes operate in Go lang!")
+	cmd := exec.Command("go", "version")
+	output, err := cmd.Output()
+	if err != nil {
+		println("error: ", err.Error())
+	} else {
+		println("go version:", string(output))
+	}
+
+	cmd = exec.Command("grep", "foo")
+	cmd.Stdin = strings.NewReader("foo\nbar\nbaz\n")
+	output, err = cmd.Output()
+	if err != nil {
+		println("error: ", err.Error())
+	} else {
+		println("grep:", string(output))
+	}
+
+	cmd = exec.Command("go", "help", "mod")
+	combined, err := cmd.CombinedOutput()
+	if err != nil {
+		println("error: ", err.Error())
+	} else {
+		println("combined output length:", len(combined))
+	}
+
+	cmd = exec.Command("go", "env", "GOROOT")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Start(); err != nil {
+		println("start error: ", err.Error())
+	} else {
+		println("pid:", cmd.Process.Pid)
+		if err := cmd.Wait(); err != nil {
+			println("wait error: ", err.Error())
+		}
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	cmd = exec.CommandContext(ctx, "go", "version")
+	output, err = cmd.Output()
+	if err != nil {
+		println("context error: ", err.Error())
+	} else {
+		println("with timeout:", string(output))
+	}
+
+	path, err := exec.LookPath("go")
+	if err != nil {
+		println("lookpath error: ", err.Error())
+	} else {
+		println("go is at:", path)
+	}
+
+	cmd = exec.Command("go", "env", "GOOS")
+	cmd.Env = append(os.Environ(), "MY_VAR=hello")
+	cmd.Dir = "."
+	output, err = cmd.Output()
+	if err != nil {
+		println("env error: ", err.Error())
+	} else {
+		println("GOOS:", strings.TrimSpace(string(output)))
+	}
+}
