@@ -44,4 +44,6 @@ They are not production modules — they are the working notes that made Go synt
 
 ## Resources
 
-- [LinkedIn](https://www.linkedin.com/in/ahmad-raza-77805313a/)
+- [My LinkedIn](https://www.linkedin.com/in/ahmad-raza-77805313a/)
+- [Course](https://www.udemy.com/course/gobootcampwithgrpcandprotocolbuffers/)
+- [Instructor](https://www.udemy.com/user/ashish-sharma-2857/)
