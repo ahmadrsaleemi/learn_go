@@ -44,6 +44,4 @@ They are not production modules — they are the working notes that made Go synt
 
 ## Resources
 
-- [Go Tour](https://go.dev/tour/)
-- [Effective Go](https://go.dev/doc/effective_go)
-- [Go by Example](https://gobyexample.com/)
+- [LinkedIn](https://www.linkedin.com/in/ahmad-raza-77805313a/)
