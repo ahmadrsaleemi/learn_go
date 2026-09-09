@@ -8,16 +8,14 @@ import (
 func main() {
 	fmt.Println("Experimenting different sorting algorithms in Go")
 
-	// --- stdlib ---
 	numbers := []int{5, 3, 4, 1, 2}
 	sort.Ints(numbers)
-	fmt.Println("sort.Ints:", numbers)
+	fmt.Println("sorting on numbers: ", numbers)
 
 	stringSlice := []string{"banana", "apple", "cherry", "avocado"}
 	sort.Strings(stringSlice)
-	fmt.Println("sort.Strings:", stringSlice)
+	fmt.Println("sorting on string: ", stringSlice)
 
-	// --- custom algorithms ---
 	demo := []int{64, 34, 25, 12, 22, 11, 90}
 
 	fmt.Println("bubble:", bubbleSort(append([]int(nil), demo...)))
